@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+* {
+  @apply box-border;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 font-sans antialiased;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    @apply !animate-none !transition-none;
+  }
+}
+
+/* Large tap targets for children */
+button,
+a[role="button"],
+input[type="checkbox"],
+input[type="radio"] {
+  @apply min-w-[44px] min-h-[44px];
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Smooth scroll for learning journey */
+.scroll-smooth {
+  @apply scroll-smooth;
+}
