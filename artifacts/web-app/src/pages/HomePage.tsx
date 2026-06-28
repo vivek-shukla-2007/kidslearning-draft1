@@ -24,7 +24,8 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/learn"
+              href="/learn/reception"
+              onClick={() => handleYearSelect("reception")}
               className="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors text-center"
             >
               Start Learning
@@ -43,27 +44,45 @@ export default function HomePage() {
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-20 bg-white rounded-t-3xl">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">Choose Your Year</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <YearCard
-            year="Reception"
-            emoji="👶"
-            color="green"
-            description="Age 4-5 | Letters & Numbers"
+          <Link
+            href="/learn/reception"
             onClick={() => handleYearSelect("reception")}
-          />
-          <YearCard
-            year="Year 1"
-            emoji="🎒"
-            color="blue"
-            description="Age 5-6 | Phonics & Adding"
+            className="block"
+          >
+            <YearCard
+              year="Reception"
+              emoji="👶"
+              color="green"
+              description="Age 4-5 | Letters & Numbers"
+              onClick={() => handleYearSelect("reception")}
+            />
+          </Link>
+          <Link
+            href="/learn/year-1"
             onClick={() => handleYearSelect("year-1")}
-          />
-          <YearCard
-            year="Year 2"
-            emoji="📖"
-            color="purple"
-            description="Age 6-7 | Reading & Maths"
+            className="block"
+          >
+            <YearCard
+              year="Year 1"
+              emoji="🎒"
+              color="blue"
+              description="Age 5-6 | Phonics & Adding"
+              onClick={() => handleYearSelect("year-1")}
+            />
+          </Link>
+          <Link
+            href="/learn/year-2"
             onClick={() => handleYearSelect("year-2")}
-          />
+            className="block"
+          >
+            <YearCard
+              year="Year 2"
+              emoji="📖"
+              color="purple"
+              description="Age 6-7 | Reading & Maths"
+              onClick={() => handleYearSelect("year-2")}
+            />
+          </Link>
         </div>
       </section>
 
@@ -110,14 +129,15 @@ export default function HomePage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">Popular Today</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { emoji: "🔤", title: "Phase 2 Phonics", desc: "Learn your first sounds" },
-              { emoji: "🔢", title: "Number Bonds", desc: "Pairs that make 10" },
-              { emoji: "💬", title: "Tricky Words", desc: "High-frequency words" },
-              { emoji: "🎯", title: "Word Games", desc: "Fun language games" },
+              { emoji: "🔤", title: "Phase 2 Phonics", desc: "Learn your first sounds", href: "/learn/reception/phonics/phase-2" },
+              { emoji: "🔢", title: "Number Bonds", desc: "Pairs that make 10", href: "/learn/reception" },
+              { emoji: "💬", title: "Tricky Words", desc: "High-frequency words", href: "/learn/reception" },
+              { emoji: "🎯", title: "Word Games", desc: "Fun language games", href: "/learn/reception" },
             ].map((item, idx) => (
               <Link
                 key={idx}
-                href="/learn"
+                href={item.href}
+                onClick={() => handleYearSelect("reception")}
                 className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all text-center cursor-pointer"
               >
                 <div className="text-3xl mb-2">{item.emoji}</div>
@@ -171,7 +191,8 @@ export default function HomePage() {
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
         <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">No signup needed. Just pick a year and start learning.</p>
         <Link
-          href="/learn"
+          href="/learn/reception"
+          onClick={() => handleYearSelect("reception")}
           className="inline-block px-10 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg hover:bg-blue-700 transition-colors"
         >
           Start Learning Now →
