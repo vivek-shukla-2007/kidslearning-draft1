@@ -1,7 +1,7 @@
 import { Switch, Route } from 'wouter';
-import LearnPage from './LearnPage';
-import PhonicsSoundGridPage from './PhonicsSoundGridPage';
-import SoundLessonDetailPage from './SoundLessonDetailPage';
+import LearnPage from '@/pages/LearnPage';
+import PhonicsSoundGridPage from '@/pages/PhonicsSoundGridPage';
+import SoundLessonDetailPage from '@/pages/SoundLessonDetailPage';
 
 export function LearnRoutes() {
   return (
