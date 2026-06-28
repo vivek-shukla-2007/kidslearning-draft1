@@ -3,7 +3,7 @@ import { useParams, Link } from 'wouter';
 import { isFeatureEnabled } from '@/config/features';
 import { getPhonicsSound } from '@/data/phonics';
 import { useProgress } from '@/hooks/useProgress';
-import { Volume2, ArrowRight, Star } from 'lucide-react';
+import { Volume2, ArrowRight, Star, FileText } from 'lucide-react';
 
 export default function SoundLessonDetailPage() {
   const { soundId } = useParams<{ soundId: string }>();
@@ -156,7 +156,26 @@ export default function SoundLessonDetailPage() {
           </div>
         )}
 
-        {/* Next Sound Button */}
+        {/* Worksheets Section */}
+        <div className="mb-8 p-6 bg-orange-50 border-2 border-orange-300 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <FileText size={28} className="text-orange-600" />
+              <div>
+                <h3 className="font-bold text-gray-900 text-lg">Practice with Worksheets</h3>
+                <p className="text-sm text-gray-600">Tracing, matching, and fill-in exercises</p>
+              </div>
+            </div>
+            <Link
+              href={`/learn/reception/phonics/phase-2/${sound.id}/worksheets`}
+              className="px-6 py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors focus:outline-none focus:ring-4 focus:ring-orange-300 whitespace-nowrap"
+            >
+              View Worksheets →
+            </Link>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
         <div className="flex gap-4">
           <Link
             href="/learn/reception/phonics/phase-2"
