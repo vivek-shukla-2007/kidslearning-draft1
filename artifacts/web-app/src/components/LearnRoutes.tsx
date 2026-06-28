@@ -2,6 +2,7 @@ import { Switch, Route } from 'wouter';
 import LearnPage from '@/pages/LearnPage';
 import PhonicsSoundGridPage from '@/pages/PhonicsSoundGridPage';
 import SoundLessonDetailPage from '@/pages/SoundLessonDetailPage';
+import PhonicsWorksheetPage from '@/pages/PhonicsWorksheetPage';
 
 export function LearnRoutes() {
   return (
@@ -15,6 +16,7 @@ export function LearnRoutes() {
       <Route path="/learn/reception/phonics" component={PhonicsSoundGridPage} />
       <Route path="/learn/reception/phonics/phase-2" component={PhonicsSoundGridPage} />
       <Route path="/learn/reception/phonics/phase-2/:soundId" component={SoundLessonDetailPage} />
+      <Route path="/learn/reception/phonics/phase-2/:soundId/worksheets" component={PhonicsWorksheetPage} />
 
       {/* Year 1 Routes (Placeholders) */}
       <Route path="/learn/year-1" component={LearnPage} />
